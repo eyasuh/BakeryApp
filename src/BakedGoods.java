@@ -1,40 +1,85 @@
-import java.util.ArrayList;
+/*******************
+ * define: name, price, expiration date, diet restriction, unit in stock
+ * create constructor that takes all the fields
+ * create getter methods
+ * create toString method to return results
+ *
+ */
+
+import com.sun.tools.javac.util.List;
 
 public class BakedGoods {
-    String userInput;
-    ArrayList<String> listOfBread = new ArrayList<>();
+    private String name;
+    private double price;
+    private String ExpDate;
+    private List<String> dietRestriction;
+    private int unitInStock;
 
-    String [][] breads = {{"Mulit-grain White", "10.95", "THURSDAY", "Gulten-Free", "15"},
-            {"Banana Bread","5.95","THURSDAY", "Has-Gulten", "15"},
-            {"Muffins", "16.50","THURSDAY", "Gluten-Free", "15"},
-            {"dinner rolls", "3.00", "friday", "Gluten-Free", "20"},
-            {"Best Bread Box","24.00","Friday", "Has_Gulten", "25"},
-            {"Cinnamon Bread","10.95","Saterday","Gulten_Free","25"},
-            {"Soft Pizza Crust","6.96","Sunday","Gulten_Free","10"},
-            {"Savory Rolls","3.00","Sunday","Has_Gulten","18"},
-            {"Large Hamburger Buns","5.00","Saterday","Gulten_Free","20"},
-            {"Spring Happy Set","34.95","Saterday","Gulten_Free","25"},
-            {"Cinnamon Raisin Bread","10.95","Saterday","Gulten_Free","26"},
+    //default constructor
+    public BakedGoods(){}
 
-
-            };
-
-    protected void setListOfBread(ArrayList<String> listOfBread) {
-        for (int i = 0; i < breads.length; i++) {
-            for (int j = 0; j < breads[i].length; i++){
-                if(breads[i][3].equals("Gulten-Free"))
-                    listOfBread.add(breads[i]);
-            }
-
-        }
-        this.listOfBread = listOfBread;
+    public BakedGoods(String name,
+                      double price,
+                      String expDate,
+                      List<String> dietRestriction,
+                      int unitInStock) {
+        this.name = name;
+        this.price = price;
+        ExpDate = expDate;
+        this.dietRestriction = dietRestriction;
+        this.unitInStock = unitInStock;
     }
 
-    public ArrayList<String> getListOfBread() {
-        return listOfBread;
+    // getters and setters
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getExpDate() {
+        return ExpDate;
+    }
+
+    public void setExpDate(String expDate) {
+        ExpDate = expDate;
+    }
+    public List<String> getDietRestriction() {
+        return dietRestriction;
+    }
+
+    public void setDietRestriction(List<String> dietRestriction) {
+        this.dietRestriction = dietRestriction;
+    }
+
+
+    public int getUnitInStock() {
+        return unitInStock;
+    }
+
+    public void setUnitInStock(int unitInStock) {
+        this.unitInStock = unitInStock;
     }
 
 
 
 
+    @Override
+    public String toString() {
+        return getName() + " " + getPrice() + " " + getExpDate() + " " + getUnitInStock();
+    }
 }
+
+
